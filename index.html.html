@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Pedro Petean — Medicina da Dor | Agende sua consulta</title>
+<meta name="description" content="Dr. Pedro Petean — Medicina da Dor, dor crônica e fibromialgia em Ribeirão Preto. Agende sua consulta pelo WhatsApp.">
+<meta property="og:title" content="Dr. Pedro Petean — Medicina da Dor">
+<meta property="og:description" content="Agende sua consulta de Medicina da Dor em Ribeirão Preto.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0e2840;
+    --ink-soft:#3a566f;
+    --blue:#1f6feb;
+    --blue-deep:#15539c;
+    --sky:#dceafa;
+    --mist:#c2dbf3;
+    --line:#d2e2f4;
+    --paper:#eaf2fb;
+    --wa:#25a35a;
+    --serif:'Fraunces',Georgia,serif;
+    --sans:'Inter Tight',system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    font-family:var(--sans);color:var(--ink-soft);line-height:1.55;min-height:100vh;
+    background:
+      radial-gradient(700px 380px at 50% -10%, var(--sky) 0%, transparent 60%),
+      radial-gradient(600px 400px at 90% 110%, #d4e6f9 0%, transparent 55%),
+      var(--paper);
+    display:flex;justify-content:center;padding:40px 18px 56px;-webkit-font-smoothing:antialiased;
+  }
+  .shell{width:100%;max-width:440px;animation:rise .7s ease both}
+  @keyframes rise{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+
+  /* header / identity */
+  .id{text-align:center;margin-bottom:30px}
+  .avatar{
+    width:108px;height:108px;border-radius:50%;margin:0 auto 18px;
+    background:linear-gradient(150deg,#dceaf9,#bcd8f4);display:grid;place-items:center;
+    font-family:var(--serif);font-size:44px;color:var(--blue-deep);
+    border:4px solid #fff;box-shadow:0 14px 36px rgba(31,111,235,.26);
+  }
+  .id h1{font-family:var(--serif);font-weight:500;color:var(--ink);font-size:26px;letter-spacing:-.01em}
+  .id .role{color:var(--blue);font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;margin-top:7px}
+  .id .creds{display:flex;justify-content:center;gap:9px;margin-top:13px;flex-wrap:wrap}
+  .id .creds span{font-size:11.5px;background:#fff;border:1px solid var(--line);color:var(--ink);padding:5px 13px;border-radius:30px;font-weight:500}
+  .id .tag{margin-top:16px;font-size:14.5px;color:var(--ink-soft);max-width:330px;margin-left:auto;margin-right:auto}
+
+  /* primary WhatsApp button */
+  .cta-wa{
+    display:flex;align-items:center;justify-content:center;gap:11px;width:100%;
+    background:var(--wa);color:#fff;font-family:var(--sans);font-weight:600;font-size:17px;
+    padding:18px;border-radius:18px;margin-bottom:13px;
+    box-shadow:0 14px 30px rgba(37,163,90,.34);transition:transform .2s, box-shadow .2s;
+  }
+  .cta-wa:hover,.cta-wa:active{transform:translateY(-2px);box-shadow:0 18px 36px rgba(37,163,90,.42)}
+  .cta-wa svg{width:24px;height:24px}
+  .cta-wa small{display:block;font-weight:400;font-size:12px;opacity:.92;margin-top:1px}
+
+  /* link list */
+  a{text-decoration:none;color:inherit}
+  .link{
+    display:flex;align-items:center;gap:15px;width:100%;background:#fff;border:1px solid var(--line);
+    border-radius:16px;padding:16px 18px;margin-bottom:12px;transition:transform .18s, border-color .18s, box-shadow .18s;
+    box-shadow:0 4px 16px rgba(14,40,64,.05);
+  }
+  .link:hover,.link:active{transform:translateY(-2px);border-color:var(--mist);box-shadow:0 10px 26px rgba(14,40,64,.1)}
+  .link .ic{width:44px;height:44px;border-radius:12px;background:var(--sky);color:var(--blue);display:grid;place-items:center;flex:none}
+  .link .ic svg{width:22px;height:22px}
+  .link .tx{flex:1;min-width:0}
+  .link .tx b{display:block;color:var(--ink);font-family:var(--sans);font-weight:600;font-size:15.5px}
+  .link .tx small{display:block;color:var(--ink-soft);font-size:13px;margin-top:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .link .arr{color:var(--mist);flex:none}
+  .link .arr svg{width:18px;height:18px}
+
+  /* modes pill row */
+  .modes{display:flex;gap:8px;margin:20px 0 8px}
+  .modes .m{flex:1;background:#fff;border:1px solid var(--line);border-radius:14px;padding:13px 8px;text-align:center}
+  .modes .m svg{width:20px;height:20px;color:var(--blue);margin-bottom:6px}
+  .modes .m b{display:block;font-family:var(--sans);font-weight:600;font-size:12.5px;color:var(--ink)}
+
+  .divider{display:flex;align-items:center;gap:12px;margin:24px 4px 18px;color:var(--ink-soft);font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:600}
+  .divider::before,.divider::after{content:"";flex:1;height:1px;background:var(--line)}
+
+  footer{text-align:center;margin-top:26px}
+  footer .ig{display:inline-flex;align-items:center;gap:8px;color:var(--blue);font-weight:600;font-size:14.5px}
+  footer .ig svg{width:18px;height:18px}
+  footer .disc{font-size:11.5px;color:#7a96b3;margin-top:18px;line-height:1.5;max-width:340px;margin-left:auto;margin-right:auto}
+  footer .reg{font-size:12px;color:#7a96b3;margin-top:12px}
+</style>
+</head>
+<body>
+  <div class="shell">
+
+    <div class="id">
+      <div class="avatar">PP</div>
+      <h1>Dr. Pedro Petean</h1>
+      <div class="role">Medicina da Dor</div>
+      <div class="creds"><span>CRM 252572</span><span>RQE 150590</span></div>
+      <p class="tag">Tratamento da dor crônica, fibromialgia e cuidado integral do adulto em Ribeirão Preto.</p>
+    </div>
+
+    <!-- Primary: WhatsApp -->
+    <a class="cta-wa" href="https://wa.me/5516992310577?text=Ol%C3%A1%2C%20Dr.%20Pedro!%20Gostaria%20de%20agendar%20uma%20consulta.">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-8.5 15.2L2 22l4.9-1.4A10 10 0 1012 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.6-4.1-.1-.2-1.1-1.4-1.1-2.7s.7-1.9.9-2.1c.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.4.6c-.1.2-.3.3-.1.6.2.3.7 1.2 1.6 2 1.1.9 2 1.2 2.3 1.3.2.1.4.1.6-.1l.7-.8c.2-.2.3-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg>
+      <span>Agendar consulta pelo WhatsApp<small>Resposta direta para marcar seu horário</small></span>
+    </a>
+
+    <!-- Call -->
+    <a class="link" href="tel:+5516992310577">
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+      <div class="tx"><b>Ligar agora</b><small>(16) 99231-0577</small></div>
+      <span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></span>
+    </a>
+
+    <!-- Location -->
+    <a class="link" href="https://www.google.com/maps/search/?api=1&query=Avenida+Presidente+Vargas+2001+Ribeir%C3%A3o+Preto+SP">
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+      <div class="tx"><b>Localização do consultório</b><small>Ed. New Century · Av. Pres. Vargas, 2001</small></div>
+      <span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></span>
+    </a>
+
+    <!-- Full site -->
+    <a class="link" href="#" id="siteLink">
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></div>
+      <div class="tx"><b>Conhecer o trabalho completo</b><small>Dor crônica, fibromialgia e cuidado do adulto</small></div>
+      <span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></span>
+    </a>
+
+    <!-- Modes of care -->
+    <div class="modes">
+      <div class="m"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-3"/></svg><b>Presencial</b></div>
+      <div class="m"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg><b>Teleconsulta</b></div>
+      <div class="m"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><path d="M9 22V12h6v10"/></svg><b>Domiciliar</b></div>
+    </div>
+
+    <footer>
+      <a class="ig" href="https://instagram.com/drpedropetean"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg>@drpedropetean</a>
+      <p class="reg">CRM 252572 · RQE 150590</p>
+      <p class="disc">Conteúdo informativo — não substitui a consulta médica. Nenhum tratamento garante cura ou resultados, que variam conforme cada paciente.</p>
+    </footer>
+
+  </div>
+
+<script>
+  // Aponta para o site completo, que está hospedado ao lado (site.html).
+  var SITE_URL = "site.html";
+  var sl = document.getElementById('siteLink');
+  if (SITE_URL) { sl.setAttribute('href', SITE_URL); }
+  else { sl.style.display = 'none'; } // esconde o botão enquanto não houver site publicado
+</script>
+</body>
+</html>
